@@ -68,9 +68,9 @@ const NewsPage = observer(() => {
                         }
                         className="news-card"
                     >
-                        <p className="news-date">Дата: {newsItem.time_ago}</p>
-                        <p className="news-author">Автор: {newsItem.user}</p>
-                        <p className="news-comments-count">Количество комментариев: {newsItem.comments_count}</p>
+                        <p className="news-date">Дата: {newsItem.time_ago || "Нет информации"}</p>
+                        <p className="news-author">Автор: {newsItem.user || "Нет информации"}</p>
+                        <p className="news-comments-count">Количество комментариев: {newsItem.comments_count || "Нет информации"}</p>
                     </Card>
                     <Button><Link to="/">Назад к списку новостей</Link></Button>
 

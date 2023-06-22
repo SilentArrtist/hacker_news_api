@@ -23,6 +23,7 @@ const HomePage = observer(() => {
             setLoading(true);
             const latestNews = await getLatestNews();
             const sortedNews = latestNews.sort((a, b) => b.time - a.time);
+            console.log(sortedNews);
             setNews(sortedNews);
         } catch (error) {
             console.error('Error fetching latest news:', error);
@@ -55,9 +56,9 @@ const HomePage = observer(() => {
                                     </Link>
                                 }
                             >
-                                <p>Рейтинг: {item.points}</p>
-                                <p>Автор: {item.user}</p>
-                                <p>Дата: {item.time_ago}</p>
+                                <p>Рейтинг: {item.points || "Нет информации"}</p>
+                                <p>Автор: {item.user || "Нет информации"}</p>
+                                <p>Дата: {item.time_ago || "Нет информации"}</p>
                             </Card>
                         </List.Item>
                     )}
